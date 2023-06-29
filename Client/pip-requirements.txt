@@ -1,0 +1,2 @@
+requests==2.31.0
+ pynmea2==1.19.0
