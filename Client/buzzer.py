@@ -300,10 +300,11 @@ songs = [
 
 
 def play_song():
-    try:
-        mySong = music(songs[0], pins=[Pin(BUZZER_PIN)])
-        while True:
-            mySong.tick()
-            sleep(0.04)
-    finally:
-        GPIO.cleanup()
+    timer = 0
+    mySong = music(songs[0], pins=[Pin(BUZZER_PIN)])
+    while True:
+        mySong.tick()
+        sleep(0.04)
+        timer += 0.1
+        if timer >= 10:
+            break

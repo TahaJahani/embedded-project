@@ -9,6 +9,7 @@ s.bind((hostMACAddress, port))
 s.listen(backlog)
 try:
     client, address = s.accept()
+    print("Client Accepted")
     while 1:
         data = client.recv(size)
         if data:
