@@ -8,7 +8,7 @@ from .forms import ImageForm
 class UploadImageView(View):
     http_method_names = ['post']
 
-    def post(self):
+    def post(self, request):
         form = ImageForm(self.request.POST, self.request.FILES)
         if form.is_valid():
             form.save()
