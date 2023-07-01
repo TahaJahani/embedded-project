@@ -6,6 +6,9 @@ class Location:
         self.lat = lat
         self.lon = lon
 
+    def __str__(self):
+        return f"({self.lat}, {self.lon})"
+
 
 def calculate_spherical_distance(location1: Location, location2: Location, r=6373):
     lat1, lon1 = location1.lat, location1.lon
